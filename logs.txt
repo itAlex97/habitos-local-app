@@ -2,11 +2,11 @@ Fase 1: Preparación
 - Decisión técnica:
 • Lenguaje de programación: Python
 • BD clave-valor: Redis
-• BD objetos: Realm
+• BD objetos: ZODB
 
 Se eligió python como lenguaje de programación ya que tiene una sintaxis muy sencilla de comprender, tiene una gran cantidad de librerías y a su vez estas cuentan con gran actualización y documentación, permitiendo que todo lo que vayamos a utilizar no se encuentre deprecado, esto también influye en las BD elegidas, ya que tiene buena integración con el lenguaje.
 Elegí Redis como BD clave-valor ya que investigando pude notar que es un servicio que se ejecuta de manera local, no está dentro del código, y esto permite de manera más fácil mostrar la instalación, y la ejecución del servidor.
-Para la BD orientada a objetos elegí Realm ya que de igual manera está diseñado para correr de manera local y sin conexión, podemos trabajar con objetos directos de Python y genera un archivo con extensión .realm el cual podemos mostrar como evidencia de la persistencia de datos.
+Para la BD orientada a objetos elegí ZODB ya que es una base de datos de objetos nativa de python que permite persistir objetos directamente. Pensaba en utilizar Realm ya que de igual manera está diseñado para correr de manera local y sin conexión, se puede trabajar con objetos directos de Python y genera un archivo con extensión .realm el cual podemos mostrar como evidencia de la persistencia de datos, pero Mongo la depreco hace un año y no encontré alguna otra opción que me convenciera.
 
 Tareas completadas:
 - Inicialización de repositorio git
