@@ -29,3 +29,6 @@ Ya que inicialicé el servidor en otro puerto, debo tenerlo en cuenta a la hora 
 - Proceso: Instalé ZODB como librería de python usando pip, cree la carpeta de zodb-data en la raíz del proyecto y ejecuté el script "zodb_setup.py" para crear el archivo de la BD
 - Problemas: Inicialmente, el script falló con un error `errno 2` (No such file or directory) debido a una ruta relativa incorrecta (`../zodb-data/`).
 - Solución: Corregí la ruta en `zodb_setup.py` a `'zodb-data/Habitos.fs'` para que el script buscara la carpeta desde la raíz del proyecto.
+
+Fase 3: Desarrollo de App
+• Definicion y creación del modelo de datos en python
