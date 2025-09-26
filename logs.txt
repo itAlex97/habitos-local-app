@@ -24,4 +24,8 @@ Fase 2: Instalación de Bases de datos
 - Solución: Matamos el proceso con el comando "sudo kill [PID]", para que el puerto quedara libre, pero al hacerlo, inmediatamente se volvia a crear otro proceso con diferente [PID] pero en el mismo puerto, asi que tuve que inicializar el servidor en otro puerto con el comando "redis-server --port 6380" y pudo funcionar correctamente
 CONSIDERACIONES
 Ya que inicialicé el servidor en otro puerto, debo tenerlo en cuenta a la hora de configurar la conexión a la BD en python
-
+----------------------------------
+- Objetivo: Instalar ZODB
+- Proceso: Instalé ZODB como librería de python usando pip, cree la carpeta de zodb-data en la raíz del proyecto y ejecuté el script "zodb_setup.py" para crear el archivo de la BD
+- Problemas: Inicialmente, el script falló con un error `errno 2` (No such file or directory) debido a una ruta relativa incorrecta (`../zodb-data/`).
+- Solución: Corregí la ruta en `zodb_setup.py` a `'zodb-data/Habitos.fs'` para que el script buscara la carpeta desde la raíz del proyecto.
