@@ -14,3 +14,14 @@ Tareas completadas:
 - Configuración del archivo .gitignore
 - Primer commit
 - Creacion del entorno virtual venv de python
+
+Fase 2: Instalación de Bases de datos
+- Objetivo: Instalar Redis
+- Proceso: Instalé Redis utilizando WSL, el cual es como una virtualización de Linux de manera nativa en Windows
+- Verificación: Inicié el servidor con el comando "redis-server" y confirmé el funcionamiento con "redis-cli ping". La consola respondió con "PONG"
+- Problemas: Al inicializar el servidor, me saltó el mensaje "failed listening on port 6379". Lo cual indica que ese puerto estaba siendo usado por algún otro proceso.
+- Diagnóstico: Investigando, encontré que es normal o muy común que durante la instalación del servidor, se quede pegado el proceso del mismo redis en ese puerto. Para comprobarlo use el comando "sudo lsof -i :6379" y me apareció una lista con los procesos que estaban escuchando en ese puerto, lo cual pude confirmar que era el mismo proceso de redis
+- Solución: Matamos el proceso con el comando "sudo kill [PID]", para que el puerto quedara libre, pero al hacerlo, inmediatamente se volvia a crear otro proceso con diferente [PID] pero en el mismo puerto, asi que tuve que inicializar el servidor en otro puerto con el comando "redis-server --port 6380" y pudo funcionar correctamente
+CONSIDERACIONES
+Ya que inicialicé el servidor en otro puerto, debo tenerlo en cuenta a la hora de configurar la conexión a la BD en python
+
