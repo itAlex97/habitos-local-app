@@ -18,7 +18,7 @@ def save_habit(habit_object):
         root['habitos'].append(habit_object)
         # transaction.commit() es lo que realmente guarda los cambios en el archivo.
         transaction.commit()
-        print(f"💾 Hábito '{habit_object.name}' guardado en ZODB.")
+        print(f"Hábito '{habit_object.name}' guardado en ZODB.")
     finally:
         connection.close()
 
@@ -49,8 +49,8 @@ def update_habit_status(habit_id, new_status):
 
         if habit_found:
             transaction.commit()
-            print(f"🔄 Estado del hábito {habit_id} actualizado a '{new_status}' en ZODB.")
+            print(f"Estado del hábito {habit_id} actualizado a '{new_status}' en ZODB.")
         else:
-            print(f"⚠️ Hábito con id {habit_id} no encontrado en ZODB.")
+            print(f"Hábito con id {habit_id} no encontrado en ZODB.")
     finally:
         connection.close()

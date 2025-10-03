@@ -32,3 +32,5 @@ Ya que inicialicé el servidor en otro puerto, debo tenerlo en cuenta a la hora 
 
 Fase 3: Desarrollo de App
 • Definicion y creación del modelo de datos en python
+• Creacion de los manejadores de las bases de datos, estos son para guardar, leer y actualizar los Habitos
+• Creacion del menu principal para el funcionamiento de la aplicacion
