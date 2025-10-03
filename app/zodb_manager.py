@@ -10,13 +10,19 @@ db = ZODB.DB(storage)
 # ------------------------------------
 
 def save_habit(habit_object):
-    """Guarda un objeto Hábito en la base de datos ZODB."""
     connection = db.open()
     try:
         root = connection.root()
-        # Añadimos el nuevo objeto a nuestra lista de hábitos
+
+        # --- INICIO DE LA CORRECCIÓN ---
+        # Primero, verificamos si el "cajón" de hábitos existe.
+        if 'habitos' not in root:
+            # Si no existe, lo creamos como una lista vacía.
+            root['habitos'] = []
+        # --- FIN DE LA CORRECCIÓN ---
+
+        # Ahora podemos agregar el hábito con seguridad.
         root['habitos'].append(habit_object)
-        # transaction.commit() es lo que realmente guarda los cambios en el archivo.
         transaction.commit()
         print(f"Hábito '{habit_object.name}' guardado en ZODB.")
     finally:
@@ -54,3 +60,8 @@ def update_habit_status(habit_id, new_status):
             print(f"Hábito con id {habit_id} no encontrado en ZODB.")
     finally:
         connection.close()
+
+def close_db():
+    """Cierra la conexión principal a la base de datos."""
+    db.close()
+    print("Base de datos ZODB cerrada correctamente.")

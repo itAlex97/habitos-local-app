@@ -2,7 +2,7 @@
 import redis
 
 # Creamos una instancia del cliente de Redis.
-r = redis.Redis(host='localhost', port=6380, db=0, decode_responses=True)
+r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
 
 def save_habit(habit_dict):
     """Guarda un hábito en Redis usando un Hash."""

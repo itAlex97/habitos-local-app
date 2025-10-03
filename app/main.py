@@ -86,6 +86,7 @@ def main():
             update_habit()
         elif choice == '4':
             print("¡Hasta pronto!")
+            zodb_manager.close_db()
             break
         else:
             print("Opción no válida. Inténtalo de nuevo.")
