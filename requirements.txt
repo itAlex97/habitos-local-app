@@ -1,0 +1,17 @@
+async-timeout==5.0.1
+BTrees==6.1
+cffi==2.0.0
+click==8.3.0
+colorama==0.4.6
+persistent==6.1.1
+pycparser==2.23
+redis==6.4.0
+toml==0.10.2
+transaction==5.0
+zc.lockfile==4.0
+ZConfig==4.2
+ZODB==6.0.1
+zodbpickle==4.2
+zope.deferredimport==6.0
+zope.interface==8.0.1
+zope.proxy==7.0
