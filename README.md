@@ -102,4 +102,4 @@ Durante el desarrollo se encontraron y solucionaron varios desafíos técnicos q
 * **Errores de KeyError:** Se corrigió un error que ocurría al guardar el primer hábito en una base de datos ZODB vacía, añadiendo una verificación para inicializar la lista de hábitos si no existía.  
 * **Experiencia de Usuario (UUIDs):** Se mejoró la interfaz de actualización para usar un sistema de índices numéricos \[1\], \[2\], ... en lugar de requerir que el usuario copie y pegue los complejos IDs de los hábitos.
 
-**Autor:** \[Tu Nombre\]
+**Autor:** Alexis Gutiérrez
